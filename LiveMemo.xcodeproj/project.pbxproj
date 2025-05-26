@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3C51ACB32DE436F4006D2F0B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3C51ACB22DE436F3006D2F0B /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3C51AC8E2DE4353F006D2F0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		3C51AC7D2DE4353F006D2F0B /* LiveMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C51AC8D2DE4353F006D2F0B /* LiveMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C51AC972DE4353F006D2F0B /* LiveMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C51ACB22DE436F3006D2F0B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		3C51AC742DE4353F006D2F0B = {
 			isa = PBXGroup;
 			children = (
+				3C51ACB22DE436F3006D2F0B /* .gitignore */,
 				3C51AC7F2DE4353F006D2F0B /* LiveMemo */,
 				3C51AC902DE4353F006D2F0B /* LiveMemoTests */,
 				3C51AC9A2DE4353F006D2F0B /* LiveMemoUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C51ACB32DE436F4006D2F0B /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
