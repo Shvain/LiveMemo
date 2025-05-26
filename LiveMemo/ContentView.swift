@@ -84,6 +84,7 @@ public struct OrderStatusAttributes: ActivityAttributes {
 struct ContentView: View {
     @State private var memo = "ダイソーに買いに行く"
     @State private var isShowingInput = false
+    @State private var debugActivity: Activity<MemoWidgetAttributes>?
     
     var body: some View {
         NavigationStack {
@@ -113,8 +114,19 @@ struct ContentView: View {
                 // ── 浮く＋ボタン ───────────────────────────────
                 VStack {
                     Spacer()
+                    HStack(spacing: 16) {
+                        Button("Start LA") {
+                            startDebugLiveActivity()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        Button("Stop LA") {
+                            stopDebugLiveActivity()
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                    .padding(.bottom, 16)
                     FloatingButton(systemName: "plus") {
-                        addLiveActivity()
                         isShowingInput = true
                     }
                     .padding(.bottom, 80)
@@ -132,21 +144,37 @@ struct ContentView: View {
         }
         
     }
-    private func addLiveActivity() {
-        let orderAttributes = OrderStatusAttributes(name: "test")
-        let initialState    = OrderStatusAttributes.ContentState(value: 1)
-        // ← supply staleDate: nil here
-        let activityContent = ActivityContent(state: initialState, staleDate: nil)
-        
+    private func startDebugLiveActivity() {
         do {
-            let activity = try Activity<OrderStatusAttributes>.request(
-                attributes: orderAttributes,
-                content:    activityContent,
-                pushType:   nil      // omit if you don’t need push
+            // 属性には name だけを渡す
+            let attrs   = MemoWidgetAttributes(name: "デバッグ")
+            // 状態には emoji だけを渡す
+            let state   = MemoWidgetAttributes.ContentState(emoji: "🔥")
+            let content = ActivityContent(state: state, staleDate: nil)
+
+            debugActivity = try Activity<MemoWidgetAttributes>.request(
+                attributes: attrs,
+                content:    content
             )
-            print("Activity started! id = \(activity.id)")
+            print("✅ Debug LA started")
         } catch {
-            print("Failed to start Live Activity:", error)
+            print("⚠️ Failed to start:", error)
+        }
+    }
+
+    // デバッグ用：Live Activity を終了
+    private func stopDebugLiveActivity() {
+        Task {
+            guard let activity = debugActivity else { return }
+            // 最後に表示したいコンテンツ。ここでは「value」をそのまま再利用しています。
+            let finalState   = MemoWidgetAttributes.ContentState(
+                emoji: activity.content.state.emoji
+            )
+            let finalContent = ActivityContent(state: finalState, staleDate: nil)
+            // 新 API を使って終了
+            await activity.end(finalContent, dismissalPolicy: .immediate)
+            debugActivity = nil
+            print("🛑 Debug Live Activity stopped")
         }
     }
 }

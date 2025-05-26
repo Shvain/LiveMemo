@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C51ACB32DE436F4006D2F0B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3C51ACB22DE436F3006D2F0B /* .gitignore */; };
+		3C51ACBB2DE438AA006D2F0B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C51ACBA2DE438AA006D2F0B /* WidgetKit.framework */; };
+		3C51ACBD2DE438AA006D2F0B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C51ACBC2DE438AA006D2F0B /* SwiftUI.framework */; };
+		3C51ACCC2DE438AB006D2F0B /* MemoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3C51ACB82DE438AA006D2F0B /* MemoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,18 +28,62 @@
 			remoteGlobalIDString = 3C51AC7C2DE4353F006D2F0B;
 			remoteInfo = LiveMemo;
 		};
+		3C51ACCA2DE438AB006D2F0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C51AC752DE4353F006D2F0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51ACB72DE438AA006D2F0B;
+			remoteInfo = MemoWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C51ACD12DE438AB006D2F0B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3C51ACCC2DE438AB006D2F0B /* MemoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C51AC7D2DE4353F006D2F0B /* LiveMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C51AC8D2DE4353F006D2F0B /* LiveMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C51AC972DE4353F006D2F0B /* LiveMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C51ACB22DE436F3006D2F0B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3C51ACB82DE438AA006D2F0B /* MemoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C51ACBA2DE438AA006D2F0B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3C51ACBC2DE438AA006D2F0B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3C51ACCD2DE438AB006D2F0B /* Exceptions for "MemoWidget" folder in "MemoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3C51ACB72DE438AA006D2F0B /* MemoWidgetExtension */;
+		};
+		3C51AE5C2DE46F0C006D2F0B /* Exceptions for "LiveMemo" folder in "MemoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedAttributes.swift,
+			);
+			target = 3C51ACB72DE438AA006D2F0B /* MemoWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3C51AC7F2DE4353F006D2F0B /* LiveMemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3C51AE5C2DE46F0C006D2F0B /* Exceptions for "LiveMemo" folder in "MemoWidgetExtension" target */,
+			);
 			path = LiveMemo;
 			sourceTree = "<group>";
 		};
@@ -48,6 +95,14 @@
 		3C51AC9A2DE4353F006D2F0B /* LiveMemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LiveMemoUITests;
+			sourceTree = "<group>";
+		};
+		3C51ACBE2DE438AA006D2F0B /* MemoWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3C51ACCD2DE438AB006D2F0B /* Exceptions for "MemoWidget" folder in "MemoWidgetExtension" target */,
+			);
+			path = MemoWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -74,6 +129,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C51ACB52DE438AA006D2F0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C51ACBD2DE438AA006D2F0B /* SwiftUI.framework in Frameworks */,
+				3C51ACBB2DE438AA006D2F0B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +148,8 @@
 				3C51AC7F2DE4353F006D2F0B /* LiveMemo */,
 				3C51AC902DE4353F006D2F0B /* LiveMemoTests */,
 				3C51AC9A2DE4353F006D2F0B /* LiveMemoUITests */,
+				3C51ACBE2DE438AA006D2F0B /* MemoWidget */,
+				3C51ACB92DE438AA006D2F0B /* Frameworks */,
 				3C51AC7E2DE4353F006D2F0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,8 +160,18 @@
 				3C51AC7D2DE4353F006D2F0B /* LiveMemo.app */,
 				3C51AC8D2DE4353F006D2F0B /* LiveMemoTests.xctest */,
 				3C51AC972DE4353F006D2F0B /* LiveMemoUITests.xctest */,
+				3C51ACB82DE438AA006D2F0B /* MemoWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3C51ACB92DE438AA006D2F0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C51ACBA2DE438AA006D2F0B /* WidgetKit.framework */,
+				3C51ACBC2DE438AA006D2F0B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,10 +184,12 @@
 				3C51AC792DE4353F006D2F0B /* Sources */,
 				3C51AC7A2DE4353F006D2F0B /* Frameworks */,
 				3C51AC7B2DE4353F006D2F0B /* Resources */,
+				3C51ACD12DE438AB006D2F0B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3C51ACCB2DE438AB006D2F0B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				3C51AC7F2DE4353F006D2F0B /* LiveMemo */,
@@ -169,6 +247,28 @@
 			productReference = 3C51AC972DE4353F006D2F0B /* LiveMemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3C51ACB72DE438AA006D2F0B /* MemoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C51ACCE2DE438AB006D2F0B /* Build configuration list for PBXNativeTarget "MemoWidgetExtension" */;
+			buildPhases = (
+				3C51ACB42DE438AA006D2F0B /* Sources */,
+				3C51ACB52DE438AA006D2F0B /* Frameworks */,
+				3C51ACB62DE438AA006D2F0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3C51ACBE2DE438AA006D2F0B /* MemoWidget */,
+			);
+			name = MemoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MemoWidgetExtension;
+			productReference = 3C51ACB82DE438AA006D2F0B /* MemoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,6 +290,9 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 3C51AC7C2DE4353F006D2F0B;
 					};
+					3C51ACB72DE438AA006D2F0B = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = 3C51AC782DE4353F006D2F0B /* Build configuration list for PBXProject "LiveMemo" */;
@@ -209,6 +312,7 @@
 				3C51AC7C2DE4353F006D2F0B /* LiveMemo */,
 				3C51AC8C2DE4353F006D2F0B /* LiveMemoTests */,
 				3C51AC962DE4353F006D2F0B /* LiveMemoUITests */,
+				3C51ACB72DE438AA006D2F0B /* MemoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +334,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3C51AC952DE4353F006D2F0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C51ACB62DE438AA006D2F0B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,6 +371,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C51ACB42DE438AA006D2F0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -272,6 +390,11 @@
 			isa = PBXTargetDependency;
 			target = 3C51AC7C2DE4353F006D2F0B /* LiveMemo */;
 			targetProxy = 3C51AC982DE4353F006D2F0B /* PBXContainerItemProxy */;
+		};
+		3C51ACCB2DE438AB006D2F0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51ACB72DE438AA006D2F0B /* MemoWidgetExtension */;
+			targetProxy = 3C51ACCA2DE438AB006D2F0B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -406,6 +529,7 @@
 				DEVELOPMENT_TEAM = YT4JU6MY89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -435,6 +559,7 @@
 				DEVELOPMENT_TEAM = YT4JU6MY89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -525,6 +650,60 @@
 			};
 			name = Release;
 		};
+		3C51ACCF2DE438AB006D2F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT4JU6MY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MemoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.shvain.live-memo.LiveMemo.MemoWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C51ACD02DE438AB006D2F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT4JU6MY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MemoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.shvain.live-memo.LiveMemo.MemoWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,6 +739,15 @@
 			buildConfigurations = (
 				3C51ACA82DE4353F006D2F0B /* Debug */,
 				3C51ACA92DE4353F006D2F0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C51ACCE2DE438AB006D2F0B /* Build configuration list for PBXNativeTarget "MemoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C51ACCF2DE438AB006D2F0B /* Debug */,
+				3C51ACD02DE438AB006D2F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
