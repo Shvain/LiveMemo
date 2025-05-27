@@ -14,6 +14,7 @@ struct MemoWidgetLiveActivity: Widget {
         ActivityConfiguration(for: MemoWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
+                Text(context.attributes.name)
                 Text("Hello \(context.state.emoji)")
             }
             .activityBackgroundTint(Color.cyan)
@@ -21,22 +22,39 @@ struct MemoWidgetLiveActivity: Widget {
 
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
                     Text("Leading")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text("Trailing")
                 }
+                DynamicIslandExpandedRegion(.center) {
+                    Text(context.attributes.name)
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    HStack {
+                            Spacer()
+                            Button(action: {
+                                // ボタンタップ時の処理
+                            }) {
+                                Image(systemName: "checkmark")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundColor(.white)
+                                    .padding(5)
+                            }
+                        }
                 }
             } compactLeading: {
                 Text("L")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Image(systemName: "exclamationmark.circle.fill")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.white, .red)
+                        .font(.system(size: 16, weight: .bold))
             } minimal: {
                 Text(context.state.emoji)
             }
@@ -48,7 +66,7 @@ struct MemoWidgetLiveActivity: Widget {
 
 extension MemoWidgetAttributes {
     fileprivate static var preview: MemoWidgetAttributes {
-        MemoWidgetAttributes(name: "World")
+        MemoWidgetAttributes(name: "Worldああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ")
     }
 }
 

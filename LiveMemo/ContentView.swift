@@ -66,7 +66,7 @@ struct HeaderCircle: View {
                    height: screenW * 2.0)
         
             .position(x: screenW / 2)
-            .offset(y: -screenW * 0)      // 好みで上下調整
+            .offset(y: -screenW * 0)
     }
 }
 
@@ -147,7 +147,7 @@ struct ContentView: View {
     private func startDebugLiveActivity() {
         do {
             // 属性には name だけを渡す
-            let attrs   = MemoWidgetAttributes(name: "デバッグ")
+            let attrs   = MemoWidgetAttributes(name: memo)
             // 状態には emoji だけを渡す
             let state   = MemoWidgetAttributes.ContentState(emoji: "🔥")
             let content = ActivityContent(state: state, staleDate: nil)
